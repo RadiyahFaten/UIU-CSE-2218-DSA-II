@@ -15,13 +15,20 @@ Result crossSum(vector<int> &arr, int start, int mid, int end);
 
 int main()
 {
-    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    int n;
+    cout << "Enter the size of array: ";
+    cin >> n;
+    vector<int> arr(n);
 
-    Result ans = maximum_subarray(nums, 0, nums.size() - 1);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    Result answer = maximum_subarray(arr, 0, arr.size() - 1);
 
-    cout << "Sum = " << ans.sum << endl;
-    cout << "Start Index = " << ans.start << endl;
-    cout << "End Index = " << ans.end << endl;
+    cout << "Sum = " << answer.sum << endl;
+    cout << "Start Index = " << answer.start << endl;
+    cout << "End Index = " << answer.end << endl;
 
     return 0;
 }
@@ -38,12 +45,12 @@ Result maximum_subarray(vector<int> &arr, int start, int end)
 
     Result cross = crossSum(arr, start, mid, end);
 
-    if(left.sum >= right.sum && left.sum >= cross.sum) 
+    if (left.sum >= right.sum && left.sum >= cross.sum)
         return left;
-    else if(right.sum >= left.sum && right.sum >= cross.sum)
+    else if (right.sum >= left.sum && right.sum >= cross.sum)
         return right;
-    else return cross;        
-
+    else
+        return cross;
 }
 
 Result crossSum(vector<int> &arr, int start, int mid, int end)
