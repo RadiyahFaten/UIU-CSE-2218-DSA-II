@@ -48,7 +48,7 @@ int main()
     cout << "Selected Activities: " << endl;
 
     //vector<Activity> selected; 
-    //if you want to stroe the activities you selected instead of just printing
+    //if you want to store the activities you selected instead of just printing
 
 
     for (Activity activity : activities)
