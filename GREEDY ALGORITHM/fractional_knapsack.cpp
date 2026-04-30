@@ -54,7 +54,7 @@ int main()
         }
         else
         {
-            max_profit += (item.value / item.weight) * capacity;
+            max_profit += item.ratio * capacity;
             capacity = 0;
             break;
         }
