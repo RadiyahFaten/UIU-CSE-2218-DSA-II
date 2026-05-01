@@ -26,7 +26,7 @@ int partition(vector<int> &arr, int start, int end)
     int i = start - 1;
     int pivot = arr[end];
 
-    for (int j = 0; j < end; j++)
+    for (int j = start; j < end; j++)
     {
         if (arr[j] <= pivot)
         {
