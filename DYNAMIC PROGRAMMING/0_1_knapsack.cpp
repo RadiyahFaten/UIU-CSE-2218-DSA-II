@@ -76,7 +76,7 @@ int knapSackDP(int W, vector<int>& wt, vector<int>& val, int n) {
     }
     
     for (int i = 1; i <= n; i++) {           
-        for (int w = 0; w <= W; w++) {
+        for (int w = 1; w <= W; w++) {
             if (wt[i] <= w) {
                
                 dp[i][w] = max(val[i] + dp[i - 1][w - wt[i]],
