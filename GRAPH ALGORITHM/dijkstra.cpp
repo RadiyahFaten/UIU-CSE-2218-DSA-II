@@ -21,8 +21,7 @@ int main()
         int u, v, w;
         cin >> u >> v >> w;
 
-        adjList[u].push_back({w, v});
-        adjList[v].push_back({w, u}); // undirected graph
+        adjList[u].push_back({w, v}); // directed graph
     }
 
     vector<bool> visited(V, 0);
@@ -42,17 +41,21 @@ int main()
     {
         pair<int, int> node = pq.top();
         int u = node.second;
+        pq.pop();
+
+        if (visited[u])
+            continue; // to avoid processing the same vertex if repeats
 
         visited[u] = 1;
-        pq.pop();
 
         for (auto adj : adjList[u])
         {
             int w = adj.first;
             int v = adj.second;
 
-            //relaxation
-            if(!visited[v] && dist[v] > dist[u] + w) {
+            // relaxation
+            if (!visited[v] && dist[v] > dist[u] + w)
+            {
                 dist[v] = dist[u] + w;
                 pq.push({dist[v], v});
             }
