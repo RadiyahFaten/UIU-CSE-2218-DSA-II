@@ -28,19 +28,20 @@ int main()
     vector<bool> visited(V, 0);
 
     // min heap that pops the min weight
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
 
-    // first node weight = 0 and node is also 0
-    pq.push({0, 0});
+    // first node weight = 0 and node is also 0 and parent is not possible so -1
+    pq.push({0, 0, -1});
 
     int cost = 0;
 
     while (!pq.empty())
     {
-        pair<int, int> current = pq.top();
+        vector<int> current = pq.top();
 
-        int w = current.first;
-        int v = current.second;
+        int w = current[0];
+        int v = current[1];
+        int parent = current[2];
 
         pq.pop();
 
@@ -49,9 +50,11 @@ int main()
             visited[v] = 1;
             cost += w;
 
+            cout << parent << "---" << v << endl;
+
             for (auto adj : adjList[v])
             {
-                pq.push({adj.first, adj.second});
+                pq.push({adj.first, adj.second, v});
             }
         }
     }

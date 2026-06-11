@@ -13,6 +13,7 @@ int Find(int node, vector<int> &parent)
     return parent[node] = Find(parent[node], parent);
 }
 
+//Union by size
 void Union(int u, int v, vector<int> &parent, vector<int> &size)
 {
     int parent_U = Find(u, parent);
@@ -40,7 +41,6 @@ int main()
     cin >> V >> E;
 
     // Take input for the edges- adjacency matrix
-
     vector<vector<int>> edges;
 
     for (int i = 0; i < E; i++)

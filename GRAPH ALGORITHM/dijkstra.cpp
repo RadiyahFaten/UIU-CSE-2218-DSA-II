@@ -40,7 +40,7 @@ int main()
     while (!pq.empty())
     {
         pair<int, int> node = pq.top();
-        int u = node.second;
+        int u = node.second; 
         pq.pop();
 
         if (visited[u])
