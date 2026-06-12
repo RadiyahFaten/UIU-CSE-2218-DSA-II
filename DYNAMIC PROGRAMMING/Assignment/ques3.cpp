@@ -20,14 +20,13 @@ public:
         
         int n = days.size();
 
-        vector<int> dp(n + 1, 0);   
+        vector<int> dp(n + 1, 0);   //dp[i] -> min cost needed to travel from day i to n - 1
         vector<int> passes ={1, 7, 30};
 
         //base case- when there are no more days left
         dp[n] = 0;
 
         //min cost counts start
-
         for(int i = n - 1; i >=0; i--) {
 
             dp[i] = INT_MAX;

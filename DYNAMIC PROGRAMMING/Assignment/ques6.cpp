@@ -12,7 +12,7 @@ public:
         int m = grid.size(); //row size
         int n = grid[0].size(); //column size
 
-        //first column fillup for min sum
+        //first column fillup for min sum- only one way to move- from top
         for(int i = 1; i < m; i++) {
             grid[i][0] += grid[i - 1][0];
         }
@@ -22,7 +22,7 @@ public:
             grid[0][i] += grid[0][i - 1];
         }
 
-        //fill the remaining cells with their min sum
+        //fill the remaining cells with their min sum- only one way to move- from left
 
         for(int i = 1; i < m; i++) {
             for(int j = 1; j < n; j++) {
