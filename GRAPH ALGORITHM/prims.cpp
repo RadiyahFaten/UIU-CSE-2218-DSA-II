@@ -30,8 +30,8 @@ int main()
     // min heap that pops the min weight
     priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
 
-    // first node weight = 0 and node is also 0 and parent is not possible so -1
-    pq.push({0, 0, -1});
+    // first node weight = 0 and node is also 0 and source is not possible so -1
+    pq.push({0, 0, -1}); // weight, node, node's parent
 
     int cost = 0;
 
