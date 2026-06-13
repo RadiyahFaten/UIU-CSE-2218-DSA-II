@@ -12,7 +12,6 @@ int networkDelayTime(vector<vector<int>> &times, int n, int k)
 
     for (auto time : times)
     {
-
         int u = time[0];
         int v = time[1];
         int w = time[2];
