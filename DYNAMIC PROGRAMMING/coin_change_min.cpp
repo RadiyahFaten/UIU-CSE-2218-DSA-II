@@ -40,7 +40,7 @@ int coinChangeMin(vector<int> &coins, int sum)
         {
             if (coin <= i)
             {
-                dp[i] = min(dp[i - 1], dp[i - coin] + 1);
+                dp[i] = min(dp[i], dp[i - coin] + 1);
             }
         }
     }

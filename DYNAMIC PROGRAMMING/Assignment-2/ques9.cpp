@@ -32,9 +32,9 @@ int main()
 
         for (int i = 0; i < N; i++)
         {
-            cin >> arr[i]; // input each element
+            cin >> arr[i];
         }
 
-        cout << maximumNonAdjacentSum(arr) << endl; // output max sum for this test case
+        cout << maximumNonAdjacentSum(arr) << endl; 
     }
     return 0;
