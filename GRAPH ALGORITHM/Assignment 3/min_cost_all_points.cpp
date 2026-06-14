@@ -18,7 +18,7 @@ public:
         {
             for (int j = i + 1; j < n; j++)
             {
-                int w = abs(points[i][0] - points[j][0]) -
+                int w = abs(points[i][0] - points[j][0]) +
                         abs(points[i][1] - points[j][1]);
 
                 adjList[i].push_back({w, j});
@@ -32,6 +32,7 @@ public:
         int cost = 0;
 
         pq.push({0, 0, -1});
+
         while (!pq.empty())
         {
             vector<int> current = pq.top();
@@ -39,6 +40,7 @@ public:
             int w = current[0];
             int v = current[1];
             int parent = current[2];
+        
             pq.pop();
 
             if (!visited[v])
